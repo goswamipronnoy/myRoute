@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/goswamipronnoy/myRoute#readme",
   "dependencies": {
-    "hapi": "^15.0.2"
+    "hapi": "^15.0.2",
+    "joi": "^9.0.4"
   }
 }
