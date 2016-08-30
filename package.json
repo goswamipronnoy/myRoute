@@ -1,0 +1,22 @@
+{
+  "name": "my-route",
+  "version": "1.0.0",
+  "description": "HApi Tutorial",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/goswamipronnoy/myRoute.git"
+  },
+  "author": "Pronnoy Goswami",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/goswamipronnoy/myRoute/issues"
+  },
+  "homepage": "https://github.com/goswamipronnoy/myRoute#readme",
+  "dependencies": {
+    "hapi": "^15.0.2"
+  }
+}
