@@ -1,10 +1,17 @@
 {
-  "name": "my-route",
+  "name": "todo-rest-api",
   "version": "1.0.0",
-  "description": "HApi Tutorial",
+  "description": "Basic todo api in Hapi",
   "main": "index.js",
+  "keywords": [
+    "hapi",
+    "hapijs",
+    "api",
+    "restful",
+    "example"
+  ],
   "scripts": {
-    "test": "mocha"
+    "test": "NODE_ENV=test ./node_modules/.bin/lab --assert should"
   },
   "repository": {
     "type": "git",
@@ -17,7 +24,10 @@
   },
   "homepage": "https://github.com/goswamipronnoy/myRoute#readme",
   "dependencies": {
+    "boom": "^4.0.0",
     "hapi": "^15.0.2",
-    "joi": "^9.0.4"
+    "joi": "^9.0.4",
+    "mongojs": "^2.4.0",
+    "node-uuid": "^1.4.7"
   }
 }

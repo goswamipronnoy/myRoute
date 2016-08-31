@@ -2,16 +2,24 @@
 
 const Hapi = require('hapi'),
     Joi = require('joi'),
-    names = require('./retrieve-name');
+    mongojs = require('mongojs'),
+    todos = require('./routes/todos');
 
 const server = new Hapi.Server();
-server.connection({port: 3000});
+server.connection({
+    host: 'localhost',
+    port: 3000,
+});
 
+// Connect to db
+server.app.db = mongojs('hapi-rest-mongo', ['todos']);
+
+// todo homepage api call
 server.route({
     method: 'GET',
-    path: '/names',
+    path: '/todos',
     handler: function (request, reply) {
-        const result = names();
+        const result = todos();
         reply(result);
     }
 });

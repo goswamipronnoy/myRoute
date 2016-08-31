@@ -6,10 +6,10 @@ module.exports = function() {
             name: 'Pronnoy Goswami'
         },
         {
-            name: 'Abhinav Dhasmana'
+            name: 'Diwakar Maurya'
         },
         {
-            name: 'Mahesh Haldar',
+            name: 'Vatsalya Prakash',
         }
     ];
     return names;
