@@ -1,33 +1,30 @@
 'use strict';
 
 const Hapi = require('hapi'),
-    Joi = require('joi'),
-    mongojs = require('mongojs'),
-    todos = require('./routes/todos');
+    mongojs = require('mongojs');
 
 const server = new Hapi.Server();
+
 server.connection({
     host: 'localhost',
     port: 3000,
 });
 
 // Connect to db
-server.app.db = mongojs('hapi-rest-mongo', ['todos']);
+server.app.db = mongojs('mongodb://localhost:3000/todos', ['todos']);
 
-// todo homepage api call
-server.route({
-    method: 'GET',
-    path: '/todos',
-    handler: function (request, reply) {
-        const result = todos();
-        reply(result);
-    }
-});
-
-server.start(function (err) {
-
+//Loading plugins
+server.register([
+    require('./routes/todos')
+], function (err) {
     if (err) {
         throw err;
     }
-    console.log(`Server running at: ${server.info.uri}`);
+    server.start(function (err) {
+        if (err) {
+            throw err;
+        }
+        console.log(`Server running at: ${server.info.uri}`);
+    });
 });
+
